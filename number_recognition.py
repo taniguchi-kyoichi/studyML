@@ -1,5 +1,5 @@
 from dataset.mnist import load_mnist
-import functions
+import my_functions
 
 
 from PIL import Image
@@ -60,11 +60,11 @@ def predict(network, x):
     b1, b2, b3 = network['b1'], network['b2'], network['b3']
 
     a1 = np.dot(x, W1) + b1
-    z1 = functions.sigmoid(a1)
+    z1 = my_functions.sigmoid(a1)
     a2 = np.dot(z1, W2) + b2
-    z2 = functions.sigmoid(a2)
+    z2 = my_functions.sigmoid(a2)
     a3 = np.dot(z2, W3) + b3
-    y = functions.softmax(a3)
+    y = my_functions.softmax(a3)
 
     return y
 
